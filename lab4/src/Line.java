@@ -26,7 +26,7 @@ public class Line {
     public Point[] findPoints(Point p) {
         ArrayList<Point> tmp = new ArrayList<Point>();
         for (int i = 0; i < points.size(); ++i) {
-            if (points.get(i).isEquals(p))
+            if (points.get(i).equals(p))
                 tmp.add(points.get(i));
         }
 

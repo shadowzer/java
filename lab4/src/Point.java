@@ -16,14 +16,6 @@ public class Point {
         this.y = y;
     }
 
-    // returns an array of 2 elements: [0]=x, [1]=y
-    public double[] getCoordinates() {
-        double[] ans = new double[2];
-        ans[0] = x;
-        ans[1] = y;
-        return ans;
-    }
-
     public void relocationPoint(double x, double y) {
         setCoordinates(x, y);
     }
@@ -33,19 +25,15 @@ public class Point {
     }
 
     public double distanceTo(Point p) {
-        double x = p.getCoordinates()[0];
-        double y = p.getCoordinates()[1];
-        return Math.sqrt((x - this.x)*(x - this.x) + (y - this.y)*(y - this.y));
+        return Math.sqrt((p.x - this.x)*(p.x - this.x) + (p.y - this.y)*(p.y - this.y));
     }
 
     public String toString() {
         return ("(" + Double.toString(x) + ";" + Double.toString(y) + ")");
     }
 
-    public boolean isEquals(Point p) {
-        double x = p.getCoordinates()[0];
-        double y = p.getCoordinates()[1];
-        if (this.x == x && this.y == y)
+    public boolean equals(Point p) {
+        if (this.x == p.x && this.y == p.y)
             return true;
         else
             return false;

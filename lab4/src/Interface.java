@@ -44,7 +44,8 @@ public class Interface {
     public boolean isContinue(Line line) {
         System.out.print("Введите 1 для отображения вершин ломаной, 2 для отображения вершин ломаной, координаты которых совпадают с заданной точкой, 3 для вывода суммарной длины всех звеньев ломаной, 4 для задания новой точки, 0 для выхода из программы: ");
         String str = sc.next();
-        double[] coor = new double[2];
+        double x;
+        double y;
         Point p;
         switch (str.charAt(0)) {
             case '0':
@@ -54,9 +55,9 @@ public class Interface {
                 break;
             case '2':
                 System.out.print("Введите координаты x и y заданной точки: ");
-                coor[0] = sc.nextDouble();
-                coor[1] = sc.nextDouble();
-                p = new Point(coor[0], coor[1]);
+                x = sc.nextDouble();
+                y = sc.nextDouble();
+                p = new Point(x, y);
                 printLinePointsEqualsToPoint(line, p);
                 break;
             case '3':
@@ -64,9 +65,9 @@ public class Interface {
                 break;
             case '4':
                 System.out.println("Введите x и y координаты новой точки: ");
-                coor[0] = sc.nextDouble();
-                coor[1] = sc.nextDouble();
-                p = new Point(coor[0], coor[1]);
+                x = sc.nextDouble();
+                y = sc.nextDouble();
+                p = new Point(x, y);
                 line.addPoint(p);
                 break;
             default:
