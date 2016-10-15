@@ -1,6 +1,6 @@
 import javax.swing.filechooser.*;
 import java.io.File;
-import javax.swing.*;
+import org.apache.commons.io.FilenameUtils;
 
 public class ImageFilter extends FileFilter {
 
@@ -10,6 +10,7 @@ public class ImageFilter extends FileFilter {
             return true;
 
         String ext = FilenameUtils.getExtension(f.getAbsolutePath());
+
         if (ext != null) {
             if (ext.equals("jpeg") || ext.equals("jpg") || ext.equals("gif") || ext.equals("png"))
                 return true;
