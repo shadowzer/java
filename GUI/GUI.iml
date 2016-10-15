@@ -7,5 +7,17 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://D:/Java/commons-io-2.5" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="file://D:/Java/commons-io-2.5/docs" />
+        </JAVADOC>
+        <SOURCES />
+        <jarDirectory url="file://D:/Java/commons-io-2.5" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>
