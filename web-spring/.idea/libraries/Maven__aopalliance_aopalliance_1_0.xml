@@ -2,12 +2,20 @@
   <library name="Maven: aopalliance:aopalliance:1.0">
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/aopalliance/aopalliance/1.0/aopalliance-1.0.jar!/" />
+      <root url="file://D:/Java/commons-codec-1.10" />
+      <root url="file://D:/Java/commons-io-2.5" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$MAVEN_REPOSITORY$/aopalliance/aopalliance/1.0/aopalliance-1.0-javadoc.jar!/" />
+      <root url="file://D:/Java/commons-codec-1.10/apidocs" />
+      <root url="file://D:/Java/commons-io-2.5/docs" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/aopalliance/aopalliance/1.0/aopalliance-1.0-sources.jar!/" />
+      <root url="file://D:/Java/commons-codec-1.10" />
     </SOURCES>
+    <jarDirectory url="file://D:/Java/commons-codec-1.10" recursive="false" />
+    <jarDirectory url="file://D:/Java/commons-io-2.5" recursive="false" />
+    <jarDirectory url="file://D:/Java/commons-codec-1.10" recursive="false" type="SOURCES" />
   </library>
 </component>
