@@ -6,15 +6,24 @@ public class Ex8Lucky {
     static class LuckyThread extends Thread {
         @Override
         public void run() {
-            synchronized (Ex8Lucky.class) {
-                while (x < 999999) {
-                    int tmp;
-                    tmp = x++;
-                    if ((tmp % 10) + (tmp / 10) % 10 + (tmp / 100) % 10 == (tmp / 1000)
-                            % 10 + (tmp / 10000) % 10 + (tmp / 100000) % 10) {
-                        count++;
-                        System.out.println(tmp);
+            while (true){
+                int tmp;
+
+                synchronized (Ex8Lucky.class) {
+                    if (x < 999999) {
+                        tmp = x++;
+                    } else {
+                        break;
                     }
+                }
+
+                if ((tmp % 10) + (tmp / 10) % 10 + (tmp / 100) % 10 == (tmp / 1000)
+                        % 10 + (tmp / 10000) % 10 + (tmp / 100000) % 10) {
+                    synchronized (Ex8Lucky.class){
+                        count++;
+                    }
+
+                    System.out.println(tmp);
                 }
             }
         }
