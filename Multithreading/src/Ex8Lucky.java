@@ -10,6 +10,14 @@ public class Ex8Lucky {
                 while (x < 999999) {
                     int tmp;
                     tmp = x++;
+
+                    System.out.println("Freezing thread " + Thread.currentThread().getId());
+                    try {
+                        Thread.sleep(3000);
+                    } catch (InterruptedException e) {
+                    }
+                    System.out.println("Resuming thread " + Thread.currentThread().getId());
+
                     if ((tmp % 10) + (tmp / 10) % 10 + (tmp / 100) % 10 == (tmp / 1000)
                             % 10 + (tmp / 10000) % 10 + (tmp / 100000) % 10) {
                         count++;
