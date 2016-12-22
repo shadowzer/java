@@ -1,33 +1,26 @@
-import com.sun.org.apache.regexp.internal.RE;
-
 public class Ex8Lucky {
 
-    private int cnt;
+    protected static int x = 0;
+    protected static int count = 0;
 
-    class LuckyThread extends Thread {
+    static class LuckyThread extends Thread {
         @Override
         public void run() {
-            Repository repository = new Repository();
-            synchronized (repository) {
-                while (repository.x < 999999) {
-                    repository.x++;
-                    if ((repository.x % 10) + (repository.x / 10) % 10 + (repository.x / 100) % 10 == (repository.x / 1000)
-                            % 10 + (repository.x / 10000) % 10 + (repository.x / 100000) % 10) {
-                        System.out.println(repository.x);
-                        repository.count++;
+            synchronized (Ex8Lucky.class) {
+                while (x < 999999) {
+                    int tmp;
+                    tmp = x++;
+                    if ((tmp % 10) + (tmp / 10) % 10 + (tmp / 100) % 10 == (tmp / 1000)
+                            % 10 + (tmp / 10000) % 10 + (tmp / 100000) % 10) {
+                        count++;
+                        System.out.println(tmp);
                     }
                 }
-                cnt = repository.count;
             }
         }
     }
 
-    class Repository {
-        protected int x = 0;
-        protected int count = 0;
-    }
-
-    public void test() throws InterruptedException {
+    public static void test() throws InterruptedException {
         Thread t1 = new LuckyThread();
         Thread t2 = new LuckyThread();
         Thread t3 = new LuckyThread();
@@ -37,6 +30,6 @@ public class Ex8Lucky {
         t1.join();
         t2.join();
         t3.join();
-        System.out.println("Total: " + cnt);
+        System.out.println("Total: " + count);
     }
 }
